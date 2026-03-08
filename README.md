@@ -1,4 +1,4 @@
-# Lunar Phases
+# 🌙 Lunar Phases
 
 ## Usage:
 It's simple! Just input the date of which you'd like to view the moon's stage on!
