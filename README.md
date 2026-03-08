@@ -2,6 +2,7 @@
 
 ## Usage:
 It's simple! Just input the date of which you'd like to view the moon's stage on!
+To access it, just visit: https://jinglecats311.github.io/lunar-phases/ , or you could self-host if you're a little weird. Do whatever suits you.
 
 ## Slight Apology:
 I developed this over a relatively short period of time -- but it just so happens that during that time I was ill and my brain wasn't functioning at its best.
