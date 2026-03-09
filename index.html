@@ -1,19 +1,152 @@
 <!DOCTYPE html>
-<html>
-    <head>
-  <title>Lunar Phases</title>
-  </head>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Lunar Phases</title>
+
+<style>
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: radial-gradient(circle at bottom, #02020a, #000000 80%);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#stars {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.star {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    animation: twinkle 3s infinite alternate;
+}
+
+@keyframes twinkle {
+    from {opacity: 0.3;}
+    to {opacity: 1;}
+}
+
+.card {
+    position: relative;
+    z-index: 1;
+    background: rgba(10,10,25,0.9);
+    padding: 45px;
+    border-radius: 18px;
+    width: 430px;
+    text-align: center;
+    box-shadow: 0 0 25px rgba(255,255,255,0.05);
+}
+
+h1 {
+    margin-top: 0;
+    font-size: 34px;
+    font-weight: 800;
+}
+
+h3 {
+    font-size: 15px;
+    font-weight: 600;
+    opacity: 0.85;
+    margin-bottom: 30px;
+}
+
+label {
+    display: block;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+input[type="date"] {
+    padding: 11px;
+    border-radius: 8px;
+    border: none;
+    font-size: 16px;
+    width: 75%;
+    margin-bottom: 20px;
+    background: #111;
+    color: white;
+    font-weight: 600;
+}
+
+button {
+    padding: 11px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    background: #f5d76e;
+    color: #111;
+    font-weight: 800;
+}
+
+button:hover {
+    box-shadow: 0 0 12px rgba(255,255,200,0.7);
+}
+
+#result {
+    margin-top: 25px;
+    padding: 16px;
+    background: rgba(0,0,0,0.5);
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+</style>
+</head>
+
 <body>
-  <h1>Phases of Our Moon</h1>
-  <h3>A sloppy, yet functional, little project of mine. I was so exhausted while making this, don't blame me for the mess that this is.</h3>
 
-  <p>Date:</p>
-  <input type="date" id="dateInput">
-  <button onclick="checkMoonPhase()">Check</button>
+<div id="stars"></div>
 
-  <p id="result">Information regarding the moon on your selected date will appear here.</p>
+<div class="card">
+    <h1>🌙 Phases of Our Moon</h1>
+    <h3>A sloppy, yet functional little project of mine. I was so exhausted while making this, don't blame me for the mess that this is.</h3>
 
-  <script src="script.js"></script>
+    <label for="dateInput">Select a date</label>
+    <input type="date" id="dateInput">
+
+    <br>
+    <button onclick="checkMoonPhase()">Check Moon Phase</button>
+
+    <p id="result">Information regarding the moon on your selected date will appear here.</p>
+</div>
+
+<script src="script.js"></script>
+
+<script>
+    
+const starContainer = document.getElementById("stars");
+
+for (let i = 0; i < 200; i++) {
+    const star = document.createElement("div");
+    star.className = "star";
+
+    const size = Math.random() * 3;
+
+    star.style.width = size + "px";
+    star.style.height = size + "px";
+
+    star.style.top = Math.random() * 100 + "%";
+    star.style.left = Math.random() * 100 + "%";
+
+    star.style.animationDuration = (Math.random() * 3 + 2) + "s";
+
+    starContainer.appendChild(star);
+}
+</script>
+
 </body>
-
 </html>
